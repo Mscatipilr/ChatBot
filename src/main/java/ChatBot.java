@@ -21,6 +21,8 @@ public class ChatBot {
         }
         count();
         quiz();
+        story(name, userAge);
+        daysWeek();
     }
 
 
@@ -202,11 +204,13 @@ public class ChatBot {
     //Count to a user input number
     public static void count() {
         Scanner in = new Scanner(System.in);
+        System.out.println(" ");
         System.out.println("Enter a number between 5 and 20:");
         int num = in.nextInt();
         for (int i = 1; i <= num; i++) {
             System.out.println(i);
         }
+        System.out.println(" ");
     }
     //multiple choice programming question. User can keep guessing until they get it right.
     public static void quiz() {
@@ -221,6 +225,7 @@ public class ChatBot {
             String answer = in.nextLine().toLowerCase();
             if (answer.equals("c")) {
                 System.out.println("Correct!");
+                System.out.println(" ");
                 break;
             }
             System.out.println("Sorry, wrong answer. Try again.");
@@ -228,5 +233,40 @@ public class ChatBot {
         }
     }
     //tell a story from user inputs
+    public static void story(String name, int userAge) {
+        System.out.println("There once was a person named " + name + ". " + name + " was a merry soul. One day, " + name);
+        System.out.println("sat on a wall and at age " + userAge + " years old " + name + " fell off that wall. All of the medics");
+        System.out.println("could not put " + name + " back together again.");
+        System.out.println(" ");
+    }
     //switch statement to tell a phrase about each day of the week - choose 1 at a time (i.e. user inputs a # 1-7)
+    public static void daysWeek () {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter a day of the week: (Mon/Tues/Wed/Thurs/Fri/Sat/Sun)");
+        String day = in.nextLine().toLowerCase();
+        switch (day) {
+            case "mon":
+                System.out.println("Monday: New beginnings with hopes held high.");
+                break;
+            case "tues":
+                System.out.println("Tuesday: Steady progress as goals draw nigh.");
+                break;
+            case "wed":
+                System.out.println("Wednesday: Midweek's peak, a moment to breathe.");
+                break;
+            case "thurs":
+                System.out.println("Thursday: Nearing the end, with calm we weave.");
+                break;
+            case "fri":
+                System.out.println("Friday: Tasks complete, the weekend's near.");
+                break;
+            case "sat":
+                System.out.println("Saturday: Time for joy, with friends and cheer.");
+                break;
+            case "sun":
+                System.out.println("Sunday: Rest and reflect, find peace so clear.");
+                break;
+
+        }
+    }
 }
